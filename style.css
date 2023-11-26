@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto+Condensed:wght@300;400;700&family=Wallpoet&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    min-height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-content: center;
+    overflow: hidden;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    position: relative;
+}
+
+.character{
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%) scale(1.1);
+}
+
+.character img {
+    transition: .1s ease;
+}
+
+.heading{
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translate(-50%) scale(0.5);
+}
+
+.left,.right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left{
+    background: #37908e;
+}
+
+.text > *{
+    opacity: 1;
+}
+
+.text{
+    font-family: "Poppins",sans-serif;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    color: #fff;
+}
+
+.left .text h2{
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 7rem;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+    opacity: 1;
+}
+
+.left .text span{
+    font-weight: 600;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    opacity: 1;
+}
+
+.left .text p{
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 29ch;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    opacity: 1;
+}
+
+
+.left .text p span{
+    display: inline-block;
+    font-size: 3rem;
+    color: #37908e;
+    background: #fff;
+    padding-inline: 1rem;
+    margin: 0.5rem 0;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+    opacity: 1;
+}
+
+
+.right{
+    background: #202124;
+}
+
+.right .text{
+    align-items: center;
+}
+
+.right .text h2{
+    font-size: 4rem;
+    font-family: "Roboto Condensed", sans-serif;
+    opacity: 1;
+}
+
+.right .text .odometer{
+    font-size: 5rem;
+    font-family: "Roboto Condensed", sans-serif;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+    opacity: 1;
+}
+
+.right .text p{
+    font-size: 2rem;
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+.right .text .social-media{
+    display: flex;
+    font-size: 4rem;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.icon{
+    height: 5rem;
+    width: 5rem;
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+    border: 2px solid rgb(255,255,255);
+    background: #fff;
+}
+
+.icon:nth-child(1){
+    color: #1DD05D;
+}
+
+.icon:nth-child(2){
+    color: #F97F10;
+}
+
+.icon:nth-child(3){
+    color: #DD001B;
+}
+
+@media (max-width: 1530px) {
+    .character img {
+        width: 47rem;
+    }
+}
+
+@media (max-width: 1290px) {
+    .character img {
+        opacity: 0.3;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .text {
+        font-size: 1.2rem;
+    }
+
+    .left .text h2 {
+        font-size: 4rem;
+    }
+
+    .left .text p {
+        font-size: 1.2rem;
+    }
+
+    .left .text p span {
+        font-size: 2rem;
+    }
+
+    .right .text h2 {
+        font-size: 2.5rem;
+    }
+
+    .right .text .odometer {
+        font-size: 4rem;
+    }
+
+    .right .text .social-media {
+        font-size: 3rem;
+        gap: 1rem;
+    }
+
+    .icon {
+        height: 4rem;
+        width: 4rem;
+    }
+
+    .right .text p {
+        font-size: 1.6rem;
+    }   
+}
+
+
+@media (max-width: 530px) {
+    .character img {
+        width: 40rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .character img {
+        width: 35rem;
+    }
+
+    .text {
+        font-size: 1.1rem;
+    }
+
+    .left .text h2 {
+        font-size: 3.2rem;
+    }
+
+    .left .text p {
+        font-size: 0.9rem;
+    }
+
+    .left .text p span {
+        font-size: 1.8rem;
+    }
+
+    .right .text h2 {
+        font-size: 2.2rem;
+    }
+
+    .right .text .odometer {
+        font-size: 3.4rem;
+    }
+
+    .right .text .social-media {
+        font-size: 2.8rem;
+        gap: 1rem;
+    }
+
+    .icon {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+
+    .right .text p {
+        font-size: 1.3rem;
+    }   
+}

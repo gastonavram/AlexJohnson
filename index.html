@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+    <title>Alex Johnson</title>
+  </head>
+  <body>
+    <main>
+      <div class="container" data-tilt="1">
+        <div class="left">
+          <div class="text">
+            <span>August 19, 2045</span>
+            <h2>
+              Echoes Of <br />
+              Your Love
+            </h2>
+            <p>
+              Experience the haunting melodies of
+              <span> Alex Johnson's </span> latest release
+            </p>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="text">
+            <h2>Monthly Listeners</h2>
+            <div class="odometer"></div>
+
+            <div class="social-media">
+              <div class="icon">
+                <i class="ri-spotify-fill"></i>
+              </div>
+              <div class="icon">
+                <i class="ri-soundcloud-fill"></i>
+              </div>
+              <div class="icon">
+                <i class="ri-netease-cloud-music-fill"></i>
+              </div>
+            </div>
+            <p>5:30 UTC , 19th August , 2045</p>
+          </div>
+        </div>
+
+        <div class="heading">
+          <img src="img/4.png" alt="" />
+        </div>
+        <div class="character">
+          <img src="img/character.png" alt="" />
+        </div>
+      </div>
+    </main>
+
+
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+
+
+    <script>
+        var el = document.querySelector(".odometer");
+        var maxValue = 524685;
+        var od = new Odometer({
+            el: el,
+            value: 0,
+            format: '(,ddd)'
+        });
+        var interval = setInterval(function() {
+            if (od.value >= maxValue) {
+                clearInterval(interval);
+            } else {
+                od.update(od.value+399)
+            }
+        }, 0);
+
+        var tl = gsap.timeline();
+        
+        tl.from(".left", {
+            y: -1500,
+            duration: 1
+        })
+
+        tl.from(".right", {
+            y: 1500,
+            duration: 1
+        })
+
+        tl.from(".character", {
+            y: 1500,
+            duration: 1
+        })
+
+        tl.from(".text span, .text h2, .text div, .text p", {
+            y: -100,
+            opacity: 0,
+            stagger: 0.1
+        })
+
+        tl.add(
+            $('.container').tilt({
+                maxTilt: 1,
+                maxGlare: .5
+            })
+        )
+    </script>
+
+  </body>
+</html>
